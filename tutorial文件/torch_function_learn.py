@@ -1,0 +1,15 @@
+import torch
+x=torch.randn(5,6)
+# print(x)
+# print(torch.chunk(x,3))
+
+y=torch.randn(2,2)
+print(y)
+z=torch.ones(2,2)
+print(torch.where(y>0,y,z))
+# print(torch.cat((y,y,y),dim=0))
+# print(torch.stack((y,y,y),0))
+# print(torch.stack((y,y,y),0)[0])
+# print(y)
+# print(torch.transpose(y,0,1))
+# print(torch.unsqueeze(y,2))
