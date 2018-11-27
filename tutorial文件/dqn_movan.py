@@ -23,9 +23,9 @@ class Net(nn.Module):
     def __init__(self, ):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(N_STATES, 50)
-        self.fc1.weight.data.normal_(0, 0.1)   # initialization
+        self.fc1.weight.data.normal_(0, 0.1)  # initialization，随机初始化参数
         self.out = nn.Linear(50, N_ACTIONS)
-        self.out.weight.data.normal_(0, 0.1)   # initialization
+        self.out.weight.data.normal_(0, 0.1)  # initialization，随机初始化参数
 
     def forward(self, x):
         x = self.fc1(x)
