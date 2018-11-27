@@ -27,7 +27,7 @@ N_TEST_IMG = 5
 
 # Mnist digits dataset
 train_data = torchvision.datasets.MNIST(
-    root='./mnist/',
+    root='/Users/liukai/python练习/数据/mnist',
     train=True,                                     # this is training data
     transform=torchvision.transforms.ToTensor(),    # Converts a PIL.Image or numpy.ndarray to
                                                     # torch.FloatTensor of shape (C x H x W) and normalize in the range [0.0, 1.0]

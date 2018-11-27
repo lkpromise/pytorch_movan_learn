@@ -16,9 +16,9 @@ INPUT_SIZE = 28  # rnn 每步输入值 即 图片每行像素
 LR = 0.01  # learning rate
 DOWNLOAD_MNIST = False  # 如果你已经下载好了mnist数据就写上 Fasle
 
-train_data = dsets.MNIST(root='./mnist', train=True, transform=transforms.ToTensor())
+train_data = dsets.MNIST(root='/Users/liukai/python练习/数据/mnist', train=True, transform=transforms.ToTensor())
 
-test_data = dsets.MNIST(root='./mnist/', train=False)
+test_data = dsets.MNIST(root='./Users/liukai/python练习/数据/mnist', train=False)
 
 # 批训练 50samples, 1 channel, 28x28 (50, 1, 28, 28)
 train_loader = Data.DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffle=True)
@@ -28,7 +28,7 @@ train_loader = Data.DataLoader(dataset=train_data, batch_size=BATCH_SIZE, shuffl
 #  shape from (2000, 28, 28) to (2000, 1, 28, 28), value in range(0,1)
 # test_x = torch.unsqueeze(test_data.test_data, dim=1).type(torch.FloatTensor)[:2000]/255
 test_x = test_data.test_data.type(torch.FloatTensor)[
-         :2000] / 255.  
+         :2000] / 255.
 test_y = test_data.test_labels[:2000]
 print(test_y.size())
 
