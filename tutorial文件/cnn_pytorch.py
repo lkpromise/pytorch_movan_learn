@@ -12,7 +12,7 @@ import  matplotlib.pyplot as plt
 EPOCH = 1
 BATCH_SIZE = 50
 LR = 0.001
-DOWNLOAD_MNIST=True
+DOWNLOAD_MNIST=False
 
 train_data = torchvision.datasets.MNIST(
     root = './mnist',
@@ -31,7 +31,10 @@ train_data = torchvision.datasets.MNIST(
 train_loader = Data.DataLoader(dataset=train_data,batch_size=BATCH_SIZE,shuffle=True,num_workers=2)
 test_data = torchvision.datasets.MNIST(root='./mnist/',train=False)
 test_x = torch.unsqueeze(test_data.test_data,dim=1).type(torch.FloatTensor)[:2000]/255.
+#print(test_x[:10])，数据的tensor表示
 test_y = test_data.test_labels[:2000]
+#打印出前十个数字的标签
+print(test_y[:10])
 
 class CNN(nn.Module):
     def __init__(self):
